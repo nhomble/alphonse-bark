@@ -20,7 +20,8 @@ def message():
     return random.choice([
         "woof",
         "chief",
-        "cyber polish"
+        "cyber polish",
+        "chief doug"
     ])
 
 
