@@ -1,5 +1,6 @@
 import random
 import os
+import sys
 
 from groupy.client import Client
 
@@ -28,6 +29,14 @@ def message():
 if __name__ == '__main__':
     bot_id = os.getenv("GROUPME_BOT")
     api_key = os.getenv("GROUPME_KEY")
+
+    if bot_id is None:
+        print("Missing GROUPME_BOT")
+        sys.exit(1)
+
+    if api_key is None:
+        print("Missing GROUPME_KEY")
+        sys.exit(1)
 
     groupme = Client.from_token(api_key)
 
