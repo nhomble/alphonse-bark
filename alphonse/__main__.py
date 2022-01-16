@@ -22,7 +22,8 @@ def message():
         "woof",
         "chief",
         "cyber polish",
-        "chief doug"
+        "chief doug",
+        "Kyle cannot fail"
     ])
 
 
