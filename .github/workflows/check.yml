@@ -25,5 +25,7 @@ jobs:
       env:
         GROUPME_BOT: ${{ secrets.GROUPME_BOT }}
         GROUPME_KEY: ${{ secrets.GROUPME_KEY }}
+        GROUPME_GROUP_ID: ${{ secrets.GROUPME_GROUP_ID }}
+        GROUPME_ALIVE: ${{ secrets.GROUPME_ALIVE }}
       run: |
         python -m alphonse
