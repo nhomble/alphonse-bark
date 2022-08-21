@@ -26,11 +26,12 @@ def message():
         "Kyle cannot fail"
     ])
 
-def keep_alive(groupme, group_id, user_id):
+def keep_alive(groupme, group_id, user_id, bot_id):
     group = groupme.groups.get(group_id)
 
     if all([m.user_id != user_id for m in group.members]):
         group.memberships.add("never die", user_id=user_id)
+        groupme.bots.post(bot_id, "I got you")
 
 if __name__ == '__main__':
     bot_id = os.getenv("GROUPME_BOT")
@@ -62,5 +63,5 @@ if __name__ == '__main__':
     else:
         print("Skipping execution")
 
-    keep_alive(groupme, group_id, user_id)
+    keep_alive(groupme, group_id, user_id, bot_id)
 
