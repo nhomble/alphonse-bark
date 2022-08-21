@@ -27,7 +27,7 @@ def message():
     ])
 
 def keep_alive(groupme, group_id, user_id):
-    group = groupme.group.get(group_id)
+    group = groupme.groups.get(group_id)
 
     if all([m.user_id != user_id for m in group.members]):
         group.memberships.add("never die", user_id=user_id)
